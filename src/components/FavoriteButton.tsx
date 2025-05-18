@@ -1,0 +1,19 @@
+// src/components/FavoriteButton.tsx
+
+import React from "react";
+import { FaHeart } from "react-icons/fa";
+import { useWishlist } from "../context/WishlistContext";
+import styles from "./FavoriteButton.module.css";
+
+const FavoriteButton: React.FC = () => {
+  const { wishlist } = useWishlist();
+
+  return (
+    <div className={styles.button}>
+      <FaHeart className={styles.icon} />
+      {wishlist.length > 0 && <span className={styles.count}>{wishlist.length}</span>}
+    </div>
+  );
+};
+
+export default FavoriteButton;
