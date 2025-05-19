@@ -53,7 +53,7 @@ export const getProducts = async (): Promise<Product[]> => {
     return data;
   } catch (error) {
     console.error("Erro no getProducts:", error);
-    return products;
+    return products; // fallback local
   }
 };
 

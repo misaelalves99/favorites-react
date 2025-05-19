@@ -2,20 +2,18 @@
 
 import React, { useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
-import { useProduct } from "../context/ProductContext";
-import { getProducts } from "../lib/api/products";
+import { useProduct } from "../hooks/useProduct";
 import styles from "./ProductList.module.css";
 
 const ProductList: React.FC = () => {
-  const { products, setProducts } = useProduct();
+  const { products, fetchProducts } = useProduct();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
     const load = async () => {
       try {
-        const fetchedProducts = await getProducts();
-        setProducts(fetchedProducts);
+        await fetchProducts();
       } catch (err) {
         setError("Erro ao carregar produtos");
         console.error("Erro ao carregar produtos:", err);
@@ -25,7 +23,7 @@ const ProductList: React.FC = () => {
     };
 
     load();
-  }, [setProducts]);
+  }, [fetchProducts]);
 
   if (loading) return <div className={styles.loading}>Carregando produtos...</div>;
   if (error) return <div className={styles.error}>{error}</div>;

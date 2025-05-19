@@ -1,17 +1,18 @@
 // src/components/FavoriteButton.tsx
 
-import React from "react";
 import { FaHeart } from "react-icons/fa";
-import { useWishlist } from "../context/WishlistContext";
+import { useWishlist } from "../hooks/useWishlist";
 import styles from "./FavoriteButton.module.css";
 
-const FavoriteButton: React.FC = () => {
+const FavoriteButton = () => {
   const { wishlist } = useWishlist();
 
+  const count = wishlist.length;
+
   return (
-    <div className={styles.button}>
+    <div className={styles.button} title="Favoritos">
       <FaHeart className={styles.icon} />
-      {wishlist.length > 0 && <span className={styles.count}>{wishlist.length}</span>}
+      {count > 0 && <span className={styles.count}>{count}</span>}
     </div>
   );
 };

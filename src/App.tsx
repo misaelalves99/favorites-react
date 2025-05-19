@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ProductProvider } from "./context/ProductContext";
-import { WishlistProvider } from "./context/WishlistContext";
+import { ProductProvider } from "./context/ProductProvider";
+import { WishlistProvider } from "./context/WishlistProvider";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
