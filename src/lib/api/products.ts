@@ -2,7 +2,6 @@
 
 import { Product } from "../../types/product";
 
-// Mock de produtos para exibição no ProductList
 const products: Product[] = [
   {
     id: 1,
@@ -46,21 +45,18 @@ const products: Product[] = [
   },
 ];
 
-// Função que simula uma chamada para a API para obter os produtos
 export const getProducts = async (): Promise<Product[]> => {
   try {
-    const res = await fetch("/api/products"); // Endpoint para os produtos
+    const res = await fetch("/api/products");
     if (!res.ok) throw new Error("Erro ao buscar produtos");
     const data: Product[] = await res.json();
     return data;
   } catch (error) {
     console.error("Erro no getProducts:", error);
-    // Em caso de erro, retornamos os produtos mockados
     return products;
   }
 };
 
-// Função que busca um produto específico pelo ID
 export const getProductById = async (id: number): Promise<Product | null> => {
   try {
     const res = await fetch(`/api/products/${id}`);

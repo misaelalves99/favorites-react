@@ -6,7 +6,6 @@ import styles from "./HomePage.module.css";
 const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
-  // Handler de navegação
   const handleNavigate = () => {
     navigate("/products");
   };
@@ -20,8 +19,6 @@ const HomePage: React.FC = () => {
           Ver Produtos
         </button>
       </section>
-
-      {/* Produtos em Destaque */}
       <section className={styles.featuredSection}>
         <h2 className={styles.sectionTitle}>Produtos em Destaque</h2>
         <ProductList />

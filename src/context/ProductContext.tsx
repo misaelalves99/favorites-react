@@ -12,17 +12,14 @@ import React, {
 import { Product } from "../types/product";
 import { getProducts } from "../lib/api/products";
 
-// Tipagem do contexto
 type ProductContextType = {
   products: Product[];
   setProducts: Dispatch<SetStateAction<Product[]>>;
   fetchProducts: () => void;
 };
 
-// Criação do contexto
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
-// Tipagem das props do Provider
 type ProductProviderProps = {
   children: ReactNode;
 };
@@ -43,7 +40,6 @@ export const ProductProvider: React.FC<ProductProviderProps> = ({ children }) =>
   );
 };
 
-// Hook customizado
 export const useProduct = (): ProductContextType => {
   const context = useContext(ProductContext);
   if (!context) {

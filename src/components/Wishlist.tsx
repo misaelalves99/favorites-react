@@ -1,7 +1,7 @@
 // src/components/Wishlist.tsx
 
 import { useEffect, useState } from "react";
-import { Product } from "../types/product"; // Atualize a importação para o caminho correto
+import { Product } from "../types/product";
 import styles from "./Wishlist.module.css";
 
 const Wishlist: React.FC = () => {

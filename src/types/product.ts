@@ -1,5 +1,3 @@
-// app/types/product.ts
-
 export type Product = {
   id: string | number;
   name: string;
@@ -12,6 +10,3 @@ export type Product = {
   createdAt?: string;
   updatedAt?: string;
 };
-
-// 01-Estruturas e Tratamento -
-// 04-Objetos -

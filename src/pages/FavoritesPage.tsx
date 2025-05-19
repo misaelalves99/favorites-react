@@ -1,8 +1,8 @@
 // src/pages/FavoritesPage.tsx
 
 import React from "react";
-import Wishlist from "../components/Wishlist"; // Ajuste o caminho conforme necessário
-import styles from "./FavoritesPage.module.css"; // Importando o CSS Module
+import Wishlist from "../components/Wishlist";
+import styles from "./FavoritesPage.module.css";
 
 const FavoritesPage: React.FC = () => {
   return (
